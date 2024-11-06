@@ -1,0 +1,63 @@
+h1{
+    margin: 20px 40px 0px 40px;
+    color: darkgreen;
+}
+
+.wishlist-container{
+    position: absolute;
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  
+  .wishlist-card{
+    display: flex;
+    width: 250px;
+    height: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .wishlist-img{
+    object-fit: cover;
+    width: 250px;
+    height: 220px;
+  }
+  
+  .wishlist-details{
+    position: absolute;
+    display: inline;
+    padding-left: 8px;
+  }
+
+  .wishlist-product-name{
+    font-size: 20px;
+  }
+
+  .wishlist-price{
+    font-size: 20px;
+    margin-top: 225px;
+  }
+
+  .remove-wishlist-btn {
+    position: absolute;
+    margin-left: 220px;
+    background-color: beige;
+    color: black;
+    border: none;
+    border-radius: 0px 0px 0px 10px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.bi-x-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 20px;
+}

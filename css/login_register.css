@@ -1,0 +1,694 @@
+/*Login.php*/
+body {
+    margin: 0;
+    padding-bottom: 18px;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    background: #00573f; 
+}
+small{
+    font-size: 12px;
+    color: green;
+}
+/*
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.7; 
+    z-index: -1; 
+}*/
+
+.login-container,
+.additional-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.reset-container{
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.reset-container{
+    margin-top: 120px;
+    margin-bottom: 174px;
+}
+
+.login-container {
+    position: relative;
+    display: flex;
+    padding: 0px;
+    margin-top: 100px;
+    height: 500px;
+    margin-bottom: 111px;
+  }
+  
+  .login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #72C268;
+    transform: translateX(-50%);
+  }
+  
+
+.logo-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container h1{
+    margin-top: 350px;
+    font-size: 40px;
+    font-family: auto;
+}
+
+.logo {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    top: 3%;
+}
+
+.right{
+    background-color: #2D4A36;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border: 0px 10px 10px 0px;
+}
+
+.form-container{
+    padding: 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .form-group label {
+    display: block;
+    margin-bottom: px;
+    color: white;
+}
+
+.login-form .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid green;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input{
+    width: 100%;
+}
+
+.forgot-password {
+    float: inline-end;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 10px;
+    margin-top: -5px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #72C268;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.form-container p {
+    text-align: center;
+    color: white;
+}
+
+.form-container .form-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.register-link {
+    color: white;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Register.php */
+.registration-container {
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px 25px 10px 25px;
+    width: 100%;
+    max-width: 1000px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    margin-top: 20px;
+    height: 100%;
+    border: none;
+}
+
+.registration-header {
+    text-align: center;
+    color: green;
+    margin-bottom: 20px;
+    font-size: 30PX;
+    font-family: inherit;
+}
+
+.registration-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 0 0 48%;
+}
+
+.fade-input {
+    color: #ccc;
+}
+
+.registration-form .form-group {
+    margin-bottom: 0px;
+}
+
+.registration-form .form-group label {
+    display: block;
+    margin-bottom: 10px; 
+    color: green;
+}
+
+.registration-form .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid green;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.registration-form .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid green;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px; 
+}
+
+.user-type-options {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.user-type-options label {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; 
+}
+
+.user-type-options input[type="radio"] {
+    margin-right: 50px;
+}
+
+button {
+    width: 100%; 
+    padding: 10px;
+    background-color: #72C268;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; 
+    margin: auto; 
+}
+
+.register-btn{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+p {
+    text-align: center;
+    color: green;
+}
+
+.login-link {
+    color: green;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+/* OTP Verification for Phone Number.php & OTP Verification for Email.php */
+.verification-container {
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+
+.verify-container {
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 211px;
+}
+
+.verify-container {
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.verification-header {
+    color: green;
+    margin-bottom: 20px;
+}
+
+.verification-form p {
+    color: green;
+    margin-bottom: 20px;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Verify_email.php*/
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: green;
+    text-align: left; 
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid green;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.resend-link, .use-phone-link {
+    color: green;
+    text-decoration: none;
+}
+
+.resend-link:hover, .use-phone-link:hover {
+    text-decoration: underline;
+}
+
+.resend-link, .use-email-link {
+    color: green;
+    text-decoration: none;
+}
+
+.resend-link:hover, .use-email-link:hover {
+    text-decoration: underline;
+}
+
+/*Identity_verification.php*/
+.verification-container {
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.verification-header {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.semi-bold {
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.id-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+.id-options label {
+    flex: 1 1 30%;
+    color: green;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-label {
+    display: block;
+    cursor: pointer;
+    color: green;
+}
+
+.upload-icon {
+    font-size: 40px;
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.upload-text {
+    font-size: 16px;
+    color: green;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-preview {
+    display: none;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.upload-filename {
+    font-size: 0.9em;
+    color: #555;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #72C268;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.separator {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#frontImage, #backImage, .upload-preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height:80px;
+    width: 100px;
+}
+
+#passwordStrength{
+    text-align: center;
+    font-size: 13px;
+}
+
+.checkbox-con{
+    display: flex;
+}
+
+.checkbox-con p{
+    padding-top: 15px;
+    margin-left: 10px;
+}
+
+.modal-body p{
+    text-align: justify;
+}
+
+.modal-title{
+    margin-left: 140px;
+}
+
+#birthdate{
+    height: 41.6px;
+}
+
+.bi-eye, .bi-eye-slash{
+    position: relative;
+    display: flex;
+    float: right;
+    font-size: 20px;
+    color: green;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.icon {
+    position: absolute;
+    right: 10px; /* Distance from the right edge */
+    top: 45%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    font-size: 1.2rem; /* Adjust the icon size */
+    color: #555; /* Icon color */
+    cursor: pointer;
+}
+
+.input-group-addon{
+    position: relative;
+    display: flex;
+    float: inline-end;
+    margin-top: -27px;
+    padding-right: 10px;
+}
+
+/* Define the coin flip animation */
+@keyframes coinFlip {
+    0% { transform: rotateY(0); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+  }
+  
+  /* Apply the animation to the logo */
+  .logo {
+    animation: coinFlip 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+  
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: auto;
+    font-size: 35px;
+    color: #333;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    max-width: 165px; /* Set a fixed width to prevent shifting */
+    animation: typing 3s steps(20, end) forwards, blink 0.5s step-end infinite;
+  }
+  
+  /* Remove cursor after typing */
+  .form-title.steady {
+    animation: none;
+    border-right: none;
+  }
+   
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .login-container h1 {
+    font-family: auto;
+    font-size: 35px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 100%; /* Set a fixed width here */
+    max-width: 115px; /* Optional: adjust this value to fit the desired width */
+    animation: typing 5s steps(30, end) forwards, blink 0.5s step-end infinite;
+  }
+  
+  /* Remove cursor after typing */
+  .login-container h1.steady {
+    animation: none;
+    border-right: none;
+  }
+  
+
+@media (max-width: 376px) and (max-height: 814px) {
+    body::before{
+        background-image: none;
+        height: 100%;
+    }
+    .registration-container{
+        margin: 0;
+        border-radius: 0;
+        height: 100%;
+        box-shadow: none;
+    }
+    .registration-form{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .registration-header{
+        font-size: 25px;
+    }
+}

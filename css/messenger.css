@@ -1,0 +1,787 @@
+/* Global Styles */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --bg: #e4e9f7;
+    --grey: #999;
+    --dark: #1a1a1a;
+    --light: #e6e6e6;
+    --wrapper: 1000px;
+    --blue: #2D4A36;
+}
+
+body {
+    background-color: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    background-size: cover;
+    background-repeat: none;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    left: 50.5%;
+    width: 95%;
+    height: 100%;
+    transform: translate(-50%, 0);
+}
+
+.container {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    width: 100%;
+    height: 85%;
+    background-color: var(--white);
+    transform: translate(-50%, -50%);
+}
+
+.container .left {
+    position: relative;
+    float: left;
+    width: 37.6%;
+    height: 100%;
+    border: 1px solid var(--light);
+    background-color: var(--white);
+    overflow-y: auto; /* Add this line to make it scrollable */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container .left .top {
+    position: relative;
+    width: 100%;
+    height: 96px;
+    padding: 20px;
+}
+
+.container .left .top:after {
+    position: absolute;
+    top: 118%;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 1px;
+    content: '';
+    background-color: var(--light);
+    transform: translate(-50%, 0);
+}
+
+.container .left input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid var(--light);
+    background-color: #eceff1;
+    border-radius: 21px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.container .left input:focus {
+    outline: none;
+}
+
+.container .left a.search {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-left: 10px;
+    border: 1px solid var(--light);
+    border-radius: 50%;
+}
+
+.container .left .people {
+    list-style: none;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+.people{
+    margin-top: 20px;
+}
+
+.container .left .people .person {
+    position: relative;
+    width: 100%;
+    padding: 12px 10% 16px;
+    cursor: pointer;
+    background-color: var(--white);
+    display: -webkit-box
+}
+
+
+.container .left .people .person div {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container .left .people .person .name{
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--dark);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+.container .left .people .person .time {
+    font-size: 14px;
+    position: absolute;
+    top: 48px;
+    right: 10%;
+    padding: 0 0 5px 5px;
+    color: var(--grey);
+}
+
+.user_name, .product_name{
+    position: relative;
+    display: block;
+    margin-left: 12px;
+    margin-top: 2%;
+}
+
+.container .left .people .person .preview {
+    position: absolute;
+    font-size: 14px;
+    display: inline-block;
+    overflow: hidden !important;
+    width: 70%;
+    left: 24%;
+    top: 45px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--grey);
+}
+
+.container .left .people .person.active,
+.container .left .people .person:hover {
+    margin-top: -1px;
+    margin-left: -1px;
+    padding-top: 13px;
+    border: 0;
+    background-color: var(--blue);
+    width: calc(100% + 2px);
+    padding-left: calc(10% + 1px);
+}
+
+.container .left .people .person.active span,
+.container .left .people .person:hover span {
+    color: var(--white);
+    background: transparent;
+}
+
+.container .left .people .person.active:after,
+.container .left .people .person:hover:after {
+    display: none; 
+}
+
+.container .right {
+    position: relative;
+    float: left;
+    width: 62.4%;
+    height: 100%;
+}
+
+.container .right .top {
+    width: 100%;
+    height: 47px;
+    padding: 15px 29px;
+    background-color: #eceff1;
+}
+
+.container .right .top span {
+    font-size: 15px;
+    color: var(--grey);
+}
+
+.container .right .top span .name {
+    color: var(--dark);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+.container .right .message {
+    position: relative;
+    display: none;
+    overflow-y: auto; /* Make the .message section scrollable */
+    padding: 0 35px 22px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: var(--light);
+    height: calc(100% - 108px);
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.container .right .message.active-chat {
+    display: block;
+}
+
+.container .right .message.active-chat .bubble {
+    transition-timing-function: cubic-bezier(.4,-.04, 1, 1);
+}
+
+.container .right .write {
+    position: absolute;
+    padding: 0px 10px 0px 10px;
+    bottom: 10px;
+    left: 95px;
+    height: 42px;
+    border: 1px solid var(--light);
+    background-color: #eceff1;
+    width: calc(100% - 158px);
+    border-radius: 5px;
+}
+
+.container .right .write input {
+    font-size: 16px;
+    width: -webkit-fill-available;
+    height: 40px;
+    padding: 0 10px;
+    color: var(--dark);
+    border: 0;
+    outline: none;
+    background-color: #eceff1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.container .right .bubble {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 8px;
+    padding: 13px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+
+.container .right .bubble:before {
+    position: absolute;
+    top: 19px;
+    display: block;
+    width: 8px;
+    height: 6px;
+    content: '\00a0';
+    transform: rotate(29deg) skew(-35deg);
+}
+
+.container .right .bubble.you {
+    float: left;
+    color: var(--white);
+    background-color: var(--blue);
+    align-self: flex-start;
+    animation-name: slideFromLeft;
+    margin-top: 10px;
+}
+
+.container .right .bubble.you:before {
+    left: -3px;
+    background-color: var(--blue);
+}
+
+.container .right .bubble.me {
+    float: right;
+    color: var(--dark);
+    background-color: #eceff1;
+    align-self: flex-end;
+    animation-name: slideFromRight;
+    margin-top: 10px;
+}
+
+.container .right .bubble.me:before {
+    right: -3px;
+    background-color: #eceff1;
+}
+
+.container .right .conversation-start {
+    position: relative;
+    width: 100%;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.container .right .conversation-start span {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.container .right .conversation-start span:before,
+.container .right .conversation-start span:after {
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    content: '';
+    background-color: var(--light);
+}
+
+.container .right .conversation-start span:before {
+    left: 0;
+}
+
+.container .right .conversation-start span:after {
+    right: 0;
+}
+
+.send{
+    position: absolute;
+    display: inline-flex;
+    float: right;
+    border: 0;
+    background-color: transparent;
+    margin-left: 20px;
+    font-size: 25px;
+    color: #2D4A36;
+    cursor: pointer;
+    top: 2px;
+}
+
+.attachment{
+    position: absolute;
+    display: flex;
+    font-size: 25px;
+    margin-left: -90px;
+    gap: 15px;
+    margin-top: 3px;
+}
+
+.bi-image, .bi-tag{
+    cursor: pointer;
+}
+
+.send-image{
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+}
+
+.inquiry-image {
+    width: 230px; /* Responsive sizing */
+    height: 120px;    /* Maintain aspect ratio */
+    object-fit: cover;
+    display: block;  /* Ensures the image appears on a new line */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 5px; /* Space between the image and message text */
+}
+
+.price{
+    margin-bottom: 10px;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+
+ul.nav-tabs {
+    position: absolute;
+    list-style-type: none; /* Removes bullets */
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+ul.nav-tabs .nav-item {
+    display: inline; /* Makes the tabs appear in a horizontal line */
+}
+
+ul.nav-tabs .nav-link {
+    text-decoration: none; /* Removes the underline */
+    padding: 5px 20px;    /* Adjust padding as needed */
+    cursor: pointer;       /* Makes the link look clickable */
+    color: black;
+    background-color: transparent; /* Default background is transparent */
+    border-radius: 50px;
+    transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+ul.nav-tabs .nav-link.active {
+    background-color: #2D4A36; /* Active tab background color */
+    color: white;
+}
+
+.bubble .action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bubble .accept-button{
+    width: 100%;
+    height: 40px;
+    background-color: #72C268;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.bubble .reject-button{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.product-profile{
+    display: flex;
+    object-fit: cover;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+}
+
+.bubble .offer-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 18px;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.bubble .offer-status.pending {
+    background-color: #72C268; /* Pending status */
+}
+
+.bubble .offer-status.accepted {
+    background-color: green; /* Accepted status */
+}
+
+.bubble .offer-status.rejected {
+    background-color: red; /* Rejected status */
+}
+
+.offer-status::first-letter {
+    text-transform: uppercase !important; /* Capitalizes the first letter */
+}
+
+/* Styles for the rate seller button */
+.rate-seller-button-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: #2D4A36; /* Dark green for messages from the current user */
+    color: white; /* White text color */
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px; /* Add space above the button */
+}
+
+.rate-seller-button-you {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    background-color: #72C268; /* Light green for messages from the other user */
+    color: black; /* Default text color */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px; /* Add space above the button */
+}
+
+.rate-seller-button-me:hover {
+    background-color: #4CAF50; /* Darker green on hover for current user */
+}
+
+.rate-seller-button-you:hover {
+    background-color: #5cbf2a; /* Darker light green on hover for the other user */
+}
+
+
+@media (max-width: 376px) and (max-height: 814px) {
+    .container .right {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 60px); /* Adjust 60px to account for any header/footer */
+        overflow-y: auto;
+    }
+    .container .left {
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+    }
+    .preview {
+        margin-left: 22px;
+        margin-top: 2px;
+    }
+    .container .right .write {
+        position: relative;
+    }
+}
+
+/* Ensure the body padding is removed when modal is open */
+body.modal-open {
+    padding-right: 0 !important;
+  }
+
+/* Modal Container */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .modal.show {
+    display: block;
+  }
+
+  /* Modal Dialog */
+  .modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+  }
+  
+  .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1.75rem);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 20px;
+  }
+  
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+   /* Close Button */
+.btn-close {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  /* Optional: Add some spacing around the close button if needed */
+  .btn-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: lightgray;
+    border-radius: 50%;
+    line-height: 1;
+  }
+
+   /* Modal Footer */
+   .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  /* Transition Effects */
+  .modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translateY(-50px);
+  }
+  
+  .modal.fade.show .modal-dialog {
+    transform: translateY(0);
+  }
+
+  .star-rating {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.star {
+    font-size: 40px; /* Adjust size as needed */
+    color: gray; /* Default color */
+}
+
+.star.selected,
+.star:hover {
+    color: gold; /* Color for selected or hovered stars */
+}
+
+.rating-label{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#review{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95%;
+    height: 120px;
+    padding: 10px;
+}
+
+.seller-rate-btn, .agreed-btn{
+    height: 40px;
+    width: 100%;
+    background-color: #2D4A36;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.seller-rate-btn:hover{
+    background-color: #a2bc62;
+}
+
+/* Default styling for active or hovered .person items */
+.container .left .people .person.active span,
+.container .left .people .person:hover span {
+    color: var(--white);
+    background: transparent;
+}
+
+/* Unread chat styling */
+.container .left .people .person.unread span {
+    font-weight: bold;   /* Make the font bold */
+}
+
+/* Unread chat styling */
+.container .left .people .person.unread .preview {
+    color: black;   /* Make the font bold */
+}
+
+/* Ensure color change on hover if unread */
+.container .left .people .person.unread:hover span {
+    color: var(--white); /* Keep text white on hover */
+}
+
+.form-group{
+    display: grid;
+    width: 95%;
+    margin: 10px;
+}
+
+.form-group .agreed{
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input{
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0.5px solid black;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.hidden-input {
+    display: none; /* Hide the file input */
+}
+.upload-icon {
+    cursor: pointer; /* Change cursor to pointer */
+}
